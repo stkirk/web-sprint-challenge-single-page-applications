@@ -15,7 +15,7 @@ export default function PizzaForm(props) {
   //onSubmit handler
   const onSubmit = (evt) => {
     evt.preventDefault();
-    debugger;
+    submitForm();
   };
 
   return (
@@ -33,6 +33,7 @@ export default function PizzaForm(props) {
               id="name-input"
               type="text"
               name="name"
+              value={formValues.name}
               placeholder="Enter your name"
               maxLength="30"
             />
@@ -42,7 +43,12 @@ export default function PizzaForm(props) {
             <div className="input-text">
               <h3>Choice of Size</h3>
             </div>
-            <select id="size-dropdown" name="size" onChange={onChange}>
+            <select
+              id="size-dropdown"
+              name="size"
+              value={formValues.size}
+              onChange={onChange}
+            >
               <option value="">-- select size --</option>
               <option value="small">Small 10"</option>
               <option value="medium">Medium 12"</option>
@@ -56,22 +62,42 @@ export default function PizzaForm(props) {
             </div>
 
             <div className="checkbox-div">
-              <input type="checkbox" name="pepperoni" onChange={onChange} />
+              <input
+                type="checkbox"
+                name="pepperoni"
+                value={formValues.pepperoni}
+                onChange={onChange}
+              />
               <label>Pepperoni</label>
             </div>
 
             <div className="checkbox-div">
-              <input type="checkbox" name="sausage" onChange={onChange} />
+              <input
+                type="checkbox"
+                name="sausage"
+                value={formValues.sausage}
+                onChange={onChange}
+              />
               <label>Sausage</label>
             </div>
 
             <div className="checkbox-div">
-              <input type="checkbox" name="onions" onChange={onChange} />
+              <input
+                type="checkbox"
+                name="onions"
+                value={formValues.onions}
+                onChange={onChange}
+              />
               <label>Onions</label>
             </div>
 
             <div className="checkbox-div">
-              <input type="checkbox" name="greenpeppers" onChange={onChange} />
+              <input
+                type="checkbox"
+                name="greenpeppers"
+                value={formValues.greenpeppers}
+                onChange={onChange}
+              />
               <label>Green Peppers</label>
             </div>
           </div>
@@ -86,6 +112,7 @@ export default function PizzaForm(props) {
               id="special-text"
               type="text"
               name="special"
+              value={formValues.special}
               placeholder="Anything else? Just ask, you know you want to"
               size="40"
               maxLength="500"
