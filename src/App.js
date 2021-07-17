@@ -4,6 +4,7 @@ import { Route, Link, NavLink, Switch } from "react-router-dom";
 
 //Component imports
 import Home from "./components/Home";
+import PizzaForm from "./components/PizzaForm";
 
 const App = () => {
   return (
@@ -19,6 +20,11 @@ const App = () => {
       {/* Routes for components */}
       <Switch>
         {/* list Routes from most specific to least specific */}
+
+        <Route path="/pizza">
+          <PizzaForm />
+        </Route>
+
         <Route path="/">
           <Home />
         </Route>
