@@ -1,17 +1,20 @@
 import React from "react";
 
-export default function PizzaForm() {
+export default function PizzaForm(props) {
+  //Destructure props
+  const { formValues, updateForm, submitForm } = props;
   return (
     <div className="pizza-container">
       <h1>Customize your favorite pie!</h1>
       <div className="order-pizza-div">
         <form id="pizza-form">
           {/* name input */}
-          <div className="input-div" id="name-input">
+          <div className="input-div">
             <div className="input-text">
               <h3>Your Name:</h3>
             </div>
             <input
+              id="name-input"
               type="text"
               name="name"
               placeholder="Enter your name"
