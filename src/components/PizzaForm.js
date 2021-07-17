@@ -6,7 +6,10 @@ export default function PizzaForm(props) {
 
   //onChange handler
   const onChange = (evt) => {
-    debugger;
+    //destructure synthetic evt
+    const { name, value, type, checked } = evt.target;
+    const valueToUse = type === "checkbox" ? checked : value;
+    updateForm(name, valueToUse);
   };
 
   //onSubmit handler

@@ -23,7 +23,7 @@ const App = () => {
 
   //onChange and onSubmit helper functions
   const updateForm = (inputName, inputValue) => {
-    debugger;
+    setFormValues({ ...formValues, [inputName]: inputValue });
   };
 
   const submitForm = () => {
