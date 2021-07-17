@@ -14,7 +14,7 @@ const App = () => {
         <div className="nav-links">
           <NavLink to="/">Home</NavLink>
           {/* maybe change Help NavLink later PLACEHOLDER */}
-          <NavLink to="/">Help</NavLink>
+          <NavLink to="/help">Help</NavLink>
         </div>
       </nav>
       {/* Routes for components */}
