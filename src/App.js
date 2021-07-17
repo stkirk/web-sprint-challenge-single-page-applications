@@ -18,11 +18,15 @@ const initialFormValues = {
   special: "",
 };
 
+const initialDisabled = true;
+
 const App = () => {
   //set formValues to state
   const [formValues, setFormValues] = useState(initialFormValues);
   //set order to state
   const [order, setOrder] = useState({});
+  // disabled submit button state
+  const [disabled, setDisabled] = useState(initialDisabled);
 
   //onChange and onSubmit helper functions
   const updateForm = (inputName, inputValue) => {
@@ -70,7 +74,7 @@ const App = () => {
             formValues={formValues}
             updateForm={updateForm}
             submitForm={submitForm}
-            order={order}
+            disabled={disabled}
           />
         </Route>
 

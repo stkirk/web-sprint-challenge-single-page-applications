@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PizzaForm(props) {
   //Destructure props
-  const { formValues, updateForm, submitForm } = props;
+  const { formValues, updateForm, submitForm, disabled } = props;
 
   //onChange handler
   const onChange = (evt) => {
@@ -121,7 +121,11 @@ export default function PizzaForm(props) {
 
           {/* order-button */}
           <div className="input-div">
-            <button id="order-button" className="pizza-button">
+            <button
+              id="order-button"
+              disabled={disabled}
+              className="pizza-button"
+            >
               Place Order
             </button>
           </div>
