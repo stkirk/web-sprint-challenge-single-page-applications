@@ -35,14 +35,26 @@ export default function PizzaForm() {
             <div className="input-text">
               <h3>Choice of Toppings</h3>
             </div>
-            <label>Pepperoni</label>
-            <input type="checkbox" name="pepperoni" />
-            <label>Sausage</label>
-            <input type="checkbox" name="sausage" />
-            <label>Onions</label>
-            <input type="checkbox" name="onions" />
-            <label>Green Peppers</label>
-            <input type="checkbox" name="greenpeppers" />
+
+            <div className="checkbox-div">
+              <input type="checkbox" name="pepperoni" />
+              <label>Pepperoni</label>
+            </div>
+
+            <div className="checkbox-div">
+              <input type="checkbox" name="sausage" />
+              <label>Sausage</label>
+            </div>
+
+            <div className="checkbox-div">
+              <input type="checkbox" name="onions" />
+              <label>Onions</label>
+            </div>
+
+            <div className="checkbox-div">
+              <input type="checkbox" name="greenpeppers" />
+              <label>Green Peppers</label>
+            </div>
           </div>
 
           {/* Special Instructions text input */}
