@@ -83,3 +83,13 @@ h1 {
   color: darkgray;
   border-color: darkgray;
 }
+
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.checkbox-left {
+  margin-right: 10%;
+}

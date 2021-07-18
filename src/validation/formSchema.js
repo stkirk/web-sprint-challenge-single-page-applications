@@ -12,5 +12,9 @@ export default yup.object().shape({
   sausage: yup.boolean(),
   onions: yup.boolean(),
   greenpeppers: yup.boolean(),
+  bacon: yup.boolean(),
+  linguica: yup.boolean(),
+  garlic: yup.boolean(),
+  mushrooms: yup.boolean(),
   special: yup.string(),
 });

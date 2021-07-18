@@ -20,6 +20,10 @@ const initialFormValues = {
   sausage: false,
   onions: false,
   greenpeppers: false,
+  bacon: false,
+  linguica: false,
+  garlic: false,
+  mushrooms: false,
   special: "",
 };
 
@@ -70,6 +74,10 @@ const App = () => {
       sausage: formValues.sausage,
       onions: formValues.onions,
       greenpeppers: formValues.greenpeppers,
+      bacon: formValues.bacon,
+      linguica: formValues.linguica,
+      garlic: formValues.garlic,
+      mushrooms: formValues.mushrooms,
       special: formValues.special,
     };
     axios

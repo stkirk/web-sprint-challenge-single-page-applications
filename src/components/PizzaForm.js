@@ -118,48 +118,98 @@ export default function PizzaForm(props) {
               <h3>Choice of Toppings</h3>
             </div>
 
-            <div className="checkbox-div">
-              <input
-                data-cy="pepperoniCheckbox"
-                type="checkbox"
-                name="pepperoni"
-                checked={formValues.pepperoni}
-                onChange={onChange}
-              />
-              <label>Pepperoni</label>
-            </div>
+            <div className="checkbox-container">
+              <div className="checkbox-left">
+                <div className="checkbox-div">
+                  <input
+                    data-cy="pepperoniCheckbox"
+                    type="checkbox"
+                    name="pepperoni"
+                    checked={formValues.pepperoni}
+                    onChange={onChange}
+                  />
+                  <label>Pepperoni</label>
+                </div>
 
-            <div className="checkbox-div">
-              <input
-                data-cy="sausageCheckbox"
-                type="checkbox"
-                name="sausage"
-                checked={formValues.sausage}
-                onChange={onChange}
-              />
-              <label>Sausage</label>
-            </div>
+                <div className="checkbox-div">
+                  <input
+                    data-cy="sausageCheckbox"
+                    type="checkbox"
+                    name="sausage"
+                    checked={formValues.sausage}
+                    onChange={onChange}
+                  />
+                  <label>Sausage</label>
+                </div>
 
-            <div className="checkbox-div">
-              <input
-                data-cy="onionsCheckbox"
-                type="checkbox"
-                name="onions"
-                checked={formValues.onions}
-                onChange={onChange}
-              />
-              <label>Onions</label>
-            </div>
+                <div className="checkbox-div">
+                  <input
+                    data-cy="onionsCheckbox"
+                    type="checkbox"
+                    name="onions"
+                    checked={formValues.onions}
+                    onChange={onChange}
+                  />
+                  <label>Onions</label>
+                </div>
 
-            <div className="checkbox-div">
-              <input
-                data-cy="greenpeppersCheckbox"
-                type="checkbox"
-                name="greenpeppers"
-                checked={formValues.greenpeppers}
-                onChange={onChange}
-              />
-              <label>Green Peppers</label>
+                <div className="checkbox-div">
+                  <input
+                    data-cy="greenpeppersCheckbox"
+                    type="checkbox"
+                    name="greenpeppers"
+                    checked={formValues.greenpeppers}
+                    onChange={onChange}
+                  />
+                  <label>Green Peppers</label>
+                </div>
+              </div>
+
+              <div className="checkbox-right">
+                <div className="checkbox-div">
+                  <input
+                    data-cy="baconCheckbox"
+                    type="checkbox"
+                    name="bacon"
+                    checked={formValues.bacon}
+                    onChange={onChange}
+                  />
+                  <label>Bacon</label>
+                </div>
+
+                <div className="checkbox-div">
+                  <input
+                    data-cy="linguicaCheckbox"
+                    type="checkbox"
+                    name="linguica"
+                    checked={formValues.linguica}
+                    onChange={onChange}
+                  />
+                  <label>Linguica</label>
+                </div>
+
+                <div className="checkbox-div">
+                  <input
+                    data-cy="garlicCheckbox"
+                    type="checkbox"
+                    name="garlic"
+                    checked={formValues.garlic}
+                    onChange={onChange}
+                  />
+                  <label>Roasted Garlic</label>
+                </div>
+
+                <div className="checkbox-div">
+                  <input
+                    data-cy="mushroomsCheckbox"
+                    type="checkbox"
+                    name="mushrooms"
+                    checked={formValues.mushrooms}
+                    onChange={onChange}
+                  />
+                  <label>Mushrooms</label>
+                </div>
+              </div>
             </div>
           </div>
 
