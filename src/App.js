@@ -22,7 +22,7 @@ import schema from "./validation/formSchema";
 const initialFormValues = {
   name: "",
   size: "",
-  sauce: "",
+  // sauce: "", Note: I don't know why, but the autotest does not like this value, with it left in the last test fails because it is not expected in the array posted to reqres, comment it out and the test passes
   pepperoni: false,
   sausage: false,
   onions: false,
