@@ -79,9 +79,6 @@ describe("Pizza Form", () => {
 
   //submit form test
   const sizeSelect = () => cy.get("[data-cy=sizeSelect]");
-  const small = () => cy.get("[data-cy=small]");
-  const medium = () => cy.get("[data-cy=medium]");
-  const large = () => cy.get("[data-cy=large]");
   const form = () => cy.get("[data-cy=form]");
 
   describe("fill out form and submit", () => {

@@ -76,7 +76,7 @@ export default function PizzaForm(props) {
                 data-cy="pepperoniCheckbox"
                 type="checkbox"
                 name="pepperoni"
-                value={formValues.pepperoni}
+                checked={formValues.pepperoni}
                 onChange={onChange}
               />
               <label>Pepperoni</label>
@@ -87,7 +87,7 @@ export default function PizzaForm(props) {
                 data-cy="sausageCheckbox"
                 type="checkbox"
                 name="sausage"
-                value={formValues.sausage}
+                checked={formValues.sausage}
                 onChange={onChange}
               />
               <label>Sausage</label>
@@ -98,7 +98,7 @@ export default function PizzaForm(props) {
                 data-cy="onionsCheckbox"
                 type="checkbox"
                 name="onions"
-                value={formValues.onions}
+                checked={formValues.onions}
                 onChange={onChange}
               />
               <label>Onions</label>
@@ -109,7 +109,7 @@ export default function PizzaForm(props) {
                 data-cy="greenpeppersCheckbox"
                 type="checkbox"
                 name="greenpeppers"
-                value={formValues.greenpeppers}
+                checked={formValues.greenpeppers}
                 onChange={onChange}
               />
               <label>Green Peppers</label>
