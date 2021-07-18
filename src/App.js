@@ -72,6 +72,7 @@ const App = () => {
     axios
       .post("https://reqres.in/api/orders", newOrder)
       .then((res) => {
+        console.log("RESPONSE DATA", res.data);
         setOrder(res.data);
         setFormValues(initialFormValues);
       })
