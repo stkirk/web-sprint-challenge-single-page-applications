@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 //imports from react-router-dom
 import { Route, NavLink, Switch } from "react-router-dom";
@@ -33,7 +33,7 @@ const initialFormErrors = {
 const App = () => {
   //set formValues to state
   const [formValues, setFormValues] = useState(initialFormValues);
-  //set order to state
+  //set order to state will pass as props to confirmation page if I have time
   const [order, setOrder] = useState({});
   // disabled submit button state
   const [disabled, setDisabled] = useState(initialDisabled);
@@ -80,6 +80,11 @@ const App = () => {
         debugger;
       });
   };
+
+  //useEffect firing after each re-render when formValues state changes, evaluate formValues state to assess if they pass validation and enable submit button
+  useEffect(() => {
+    schema.isValid(formValues).then((valid) => setDisabled(!valid));
+  }, [formValues]);
 
   return (
     <div className="App">
