@@ -22,7 +22,7 @@ export default function PizzaForm(props) {
     <div className="pizza-container">
       <h1>Customize your favorite pie!</h1>
       <div className="order-pizza-div">
-        <form id="pizza-form" onSubmit={onSubmit}>
+        <form id="pizza-form" onSubmit={onSubmit} data-cy="form">
           {/* name input */}
           <div className="input-div">
             <div className="input-text">
@@ -30,6 +30,7 @@ export default function PizzaForm(props) {
               <div className="errors-div">{formErrors.name}</div>
             </div>
             <input
+              data-cy="nameInput"
               onChange={onChange}
               id="name-input"
               type="text"
@@ -46,15 +47,22 @@ export default function PizzaForm(props) {
               <div className="errors-div">{formErrors.size}</div>
             </div>
             <select
+              data-cy="sizeSelect"
               id="size-dropdown"
               name="size"
               value={formValues.size}
               onChange={onChange}
             >
               <option value="">-- select size --</option>
-              <option value="small">Small 10"</option>
-              <option value="medium">Medium 12"</option>
-              <option value="large">Large 16"</option>
+              <option data-cy="small" value="small">
+                Small 10"
+              </option>
+              <option data-cy="medium" value="medium">
+                Medium 12"
+              </option>
+              <option data-cy="large" value="large">
+                Large 16"
+              </option>
             </select>
           </div>
           {/* Toppings checkboxes */}
@@ -65,6 +73,7 @@ export default function PizzaForm(props) {
 
             <div className="checkbox-div">
               <input
+                data-cy="pepperoniCheckbox"
                 type="checkbox"
                 name="pepperoni"
                 value={formValues.pepperoni}
@@ -75,6 +84,7 @@ export default function PizzaForm(props) {
 
             <div className="checkbox-div">
               <input
+                data-cy="sausageCheckbox"
                 type="checkbox"
                 name="sausage"
                 value={formValues.sausage}
@@ -85,6 +95,7 @@ export default function PizzaForm(props) {
 
             <div className="checkbox-div">
               <input
+                data-cy="onionsCheckbox"
                 type="checkbox"
                 name="onions"
                 value={formValues.onions}
@@ -95,6 +106,7 @@ export default function PizzaForm(props) {
 
             <div className="checkbox-div">
               <input
+                data-cy="greenpeppersCheckbox"
                 type="checkbox"
                 name="greenpeppers"
                 value={formValues.greenpeppers}
@@ -110,6 +122,7 @@ export default function PizzaForm(props) {
               <h3>Special Insructions</h3>
             </div>
             <input
+              data-cy="specialInput"
               onChange={onChange}
               id="special-text"
               type="text"
