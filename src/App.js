@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 //imports from react-router-dom
-import { Route, NavLink, Switch } from "react-router-dom";
+import {
+  Route,
+  NavLink,
+  Switch,
+  useHistory,
+  useLocation,
+} from "react-router-dom";
 
 //Component imports
 import Home from "./components/Home";
 import PizzaForm from "./components/PizzaForm";
+import Confirmation from "./components/Confirmation";
 
 //validation imports
 import * as yup from "yup";
@@ -65,6 +72,10 @@ const App = () => {
     setFormValues({ ...formValues, [inputName]: inputValue });
   };
 
+  //pulling pathname info for submit
+  const history = useHistory();
+  const { pathname } = useLocation();
+
   const submitForm = () => {
     const newOrder = {
       name: formValues.name.trim(),
@@ -86,6 +97,10 @@ const App = () => {
         console.log("RESPONSE DATA", res.data);
         setOrder(res.data);
         setFormValues(initialFormValues);
+        return res.data;
+      })
+      .then((res) => {
+        history.push(`${pathname}/${res.id}`);
       })
       .catch((err) => {
         console.log("ERROR", err);
@@ -112,6 +127,10 @@ const App = () => {
       <Switch>
         {/* list Routes from most specific to least specific */}
 
+        <Route path="/pizza/:id">
+          <Confirmation order={order} />
+        </Route>
+
         <Route path="/pizza">
           <PizzaForm
             formValues={formValues}
@@ -119,6 +138,7 @@ const App = () => {
             submitForm={submitForm}
             disabled={disabled}
             formErrors={formErrors}
+            order={order}
           />
         </Route>
 
