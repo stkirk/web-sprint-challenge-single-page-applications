@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PizzaForm(props) {
   //Destructure props
-  const { formValues, updateForm, submitForm, disabled } = props;
+  const { formValues, updateForm, submitForm, disabled, formErrors } = props;
 
   //onChange handler
   const onChange = (evt) => {
@@ -27,6 +27,7 @@ export default function PizzaForm(props) {
           <div className="input-div">
             <div className="input-text">
               <h3>Your Name:</h3>
+              <div className="errors-div">{formErrors.name}</div>
             </div>
             <input
               onChange={onChange}
@@ -42,6 +43,7 @@ export default function PizzaForm(props) {
           <div className="input-div">
             <div className="input-text">
               <h3>Choice of Size</h3>
+              <div className="errors-div">{formErrors.size}</div>
             </div>
             <select
               id="size-dropdown"

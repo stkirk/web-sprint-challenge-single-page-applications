@@ -71,3 +71,9 @@ h1 {
 .pizza-container {
   margin-left: 5%;
 }
+
+.errors-div {
+  color: red;
+  font-size: 17px;
+  font-weight: bold;
+}

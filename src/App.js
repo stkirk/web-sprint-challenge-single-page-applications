@@ -7,6 +7,10 @@ import { Route, NavLink, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import PizzaForm from "./components/PizzaForm";
 
+//validation imports
+import * as yup from "yup";
+import schema from "./validation/formSchema";
+
 //Initial state values for Form
 const initialFormValues = {
   name: "",
@@ -20,6 +24,12 @@ const initialFormValues = {
 
 const initialDisabled = true;
 
+//initial blank form errors object
+const initialFormErrors = {
+  name: "",
+  size: "",
+};
+
 const App = () => {
   //set formValues to state
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -27,9 +37,25 @@ const App = () => {
   const [order, setOrder] = useState({});
   // disabled submit button state
   const [disabled, setDisabled] = useState(initialDisabled);
+  //forErrors state
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
+
+  //schema validation helper function
+  const validate = (name, value) => {
+    yup
+      .reach(schema, name)
+      .validate(value)
+      .then((valid) => {
+        setFormErrors({ ...formErrors, [name]: "" });
+      })
+      .catch((err) => {
+        setFormErrors({ ...formErrors, [name]: err.errors[0] });
+      });
+  };
 
   //onChange and onSubmit helper functions
   const updateForm = (inputName, inputValue) => {
+    validate(inputName, inputValue);
     setFormValues({ ...formValues, [inputName]: inputValue });
   };
 
@@ -75,6 +101,7 @@ const App = () => {
             updateForm={updateForm}
             submitForm={submitForm}
             disabled={disabled}
+            formErrors={formErrors}
           />
         </Route>
 
