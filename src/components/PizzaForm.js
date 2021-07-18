@@ -65,6 +65,53 @@ export default function PizzaForm(props) {
               </option>
             </select>
           </div>
+          {/* Sauce radio buttons */}
+          <div className="input-div">
+            <div className="input-text">
+              <h3>Choice of Sauce</h3>
+            </div>
+            <div className="radio-div">
+              <label>
+                <input
+                  data-cy="redSauce"
+                  type="radio"
+                  name="sauce"
+                  value="red"
+                  checked={formValues.sauce === "red"}
+                  onChange={onChange}
+                />
+                Red Sauce (just like mama makes)
+              </label>
+            </div>
+
+            <div className="radio-div">
+              <label>
+                <input
+                  data-cy="oil"
+                  type="radio"
+                  name="sauce"
+                  value="oil"
+                  checked={formValues.sauce === "oil"}
+                  onChange={onChange}
+                />
+                House Olive Oil (garlic and red pepper flakes)
+              </label>
+            </div>
+
+            <div className="radio-div">
+              <label>
+                <input
+                  data-cy="white"
+                  type="radio"
+                  name="sauce"
+                  value="white"
+                  checked={formValues.sauce === "white"}
+                  onChange={onChange}
+                />
+                White Sauce (Alfredo...but better)
+              </label>
+            </div>
+          </div>
           {/* Toppings checkboxes */}
           <div className="input-div">
             <div className="input-text">

@@ -15,6 +15,7 @@ import schema from "./validation/formSchema";
 const initialFormValues = {
   name: "",
   size: "",
+  sauce: "",
   pepperoni: false,
   sausage: false,
   onions: false,
@@ -28,6 +29,7 @@ const initialDisabled = true;
 const initialFormErrors = {
   name: "",
   size: "",
+  sauce: "",
 };
 
 const App = () => {
@@ -63,6 +65,7 @@ const App = () => {
     const newOrder = {
       name: formValues.name.trim(),
       size: formValues.size,
+      sauce: formValues.sauce,
       pepperoni: formValues.pepperoni,
       sausage: formValues.sausage,
       onions: formValues.onions,
