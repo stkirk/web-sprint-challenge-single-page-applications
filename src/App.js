@@ -70,7 +70,7 @@ const App = () => {
       special: formValues.special,
     };
     axios
-      .post("https://reqres.in/api/users", newOrder)
+      .post("https://reqres.in/api/orders", newOrder)
       .then((res) => {
         setOrder(res.data);
         setFormValues(initialFormValues);
